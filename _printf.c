@@ -16,10 +16,11 @@ int _printf(const char *format, ...)
 	};
 	va_list ap;
 	int print;
+	int n;
 
 	va_start(ap, format);
-	
+	n = select_func(format, ap, function);
 	va_end(ap);
-	return (printf);
+	return (print);
 
 }
