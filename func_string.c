@@ -17,7 +17,8 @@ int func_string(va_list ap);
 	index = 0;
 	while (pntr[index] != 0)
 	{
-		i+= _putchar(pntr[index]);
+		_putchar(pntr[index]);
+		index++;
 	}
 
 	return (index);
