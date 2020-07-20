@@ -6,6 +6,6 @@
  */
 int func_porc(__attribute__((unused)) va_list ap)
 {
-	_putchar('%'));
+	_putchar('%');
 	return (1);
 }
