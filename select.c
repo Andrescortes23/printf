@@ -13,7 +13,7 @@ int selec_check(char character)
 
 	if (character == '%')
 		return (-1);
-       	for (i = 0; i < 4; i++)
+	for (i = 0; i < 4; i++)
 	{
 		if (character == list[i])
 			return (1);

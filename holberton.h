@@ -7,7 +7,7 @@
 #include <limits.h>
 
 /**
- * type - struct type
+ * struct type - struct type
  * @op: the operator
  * @func: function pointer
  *

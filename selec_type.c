@@ -3,7 +3,6 @@
 /**
  * selec_type - selec type
  * @op: selec type
- * @ap: arguments
  *
  * Return: 0
  */

@@ -39,7 +39,7 @@ int func_dec(va_list ap)
 
 /**
  * func_int - print integer
- * @p: parameters
+ * @ap: parameters
  *
  * Return: func_int
  */
