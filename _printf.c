@@ -9,11 +9,11 @@
 int _printf(const char *format, ...)
 {
 	type_t function[] = {
-		{"c", func_char},
-		{"s", func_string},
-		{"%", func_porc},
-		{"i", func_int},
-		{"d", func_int},
+		{'c', func_char},
+		{'s', func_string},
+		{'%', func_porc},
+		{'i', func_int},
+		{'d', func_int},
 		{NULL, NULL}
 	};
 	va_list ap;
