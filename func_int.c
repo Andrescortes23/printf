@@ -37,7 +37,6 @@ int func_dec(va_list ap)
 }
 
 /**
-<<<<<<< HEAD
  *func_int - to print integer
  *@ap: parameters
  *Return: func_dec to parameters

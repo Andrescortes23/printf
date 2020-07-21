@@ -17,13 +17,13 @@ int selec_check(char character)
 			for (b = 0; function[b].op != NULL; b++)
 			{
 				if (format[a + 1] == function[b].op[0])
-					{
-						call = function[b].func(ap);
-						if (call == -1)
-							return (-1);
-						counter += call;
-						break;
-					}
+				{
+					call = function[b].func(ap);
+					if (call == -1)
+						return (-1);
+					counter += call;
+					break;
+				}
 			}
 			if (function[b].op == NULL && format[a + 1] != ' ')
 			{
