@@ -6,7 +6,7 @@
  *
  * Return: -1 for %, 1 for char
  */
-int selec_check(char character)
+int select_func(const char *format, va_list ap, type_t function[])
 {
 	int a, b, call, counter = 0;
 
