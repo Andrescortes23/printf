@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- * select- select different types of function
- * @format: _printf argument
- * @ap: list of arguments
- * @function: function type structure
+ * selec_check - specific char
+ * @character: arguments
+ *
+ * Return: -1 for %, 1 for char
  */
-int select_func(const char *format, va_list ap, type_t function[])
+int selec_check(char character)
 {
 	int a, b, call, counter = 0;
 

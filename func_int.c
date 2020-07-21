@@ -16,7 +16,7 @@ int func_dec(va_list ap)
 	resul = va_arg(ap, int);
 	if (resul < 0)
 	{
-		resul = resul * -1;
+		resul *= -1;
 		_putchar('-');
 		count++;
 	}
@@ -24,19 +24,20 @@ int func_dec(va_list ap)
 	n = resul;
 	while (n > 9)
 	{
-		n = n / 10;
-		num = num * 10;
+		n /= 10;
+		num *= 10;
 	}
 	while (num >= 1)
 	{
 		count++;
-		_putchar((x / num) % 10 + '0');
-		num = num / 10;
+		_putchar(((x / num) % 10) + '0');
+		num /= 10;
 	}
 	return (count);
 }
 
 /**
+<<<<<<< HEAD
  *func_int - to print integer
  *@ap: parameters
  *Return: func_dec to parameters

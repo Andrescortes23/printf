@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * _printf - function that produces output according to a format
  * @format: is a character string. The format string is composed or more d
@@ -22,5 +23,4 @@ int _printf(const char *format, ...)
 	print = select_func(format, ap, function);
 	va_end(ap);
 	return (print);
-
 }
