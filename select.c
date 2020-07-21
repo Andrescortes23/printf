@@ -8,41 +8,41 @@
  */
 int select_func(const char *format, va_list ap, type_t function[])
 {
-	int i, j, count = 0;
+	int a, b, call, counter = 0;
 
-	if (format == NULL)
-		return (-1);
-	for (i = 0; format[i] != '\0'; i++)
+	for (a = 0; format[a] != '\0'; a++)
 	{
-		for (; format[i] != '%' && format[i]; i++)
+		if (format[a] == '%')
 		{
-			_putchar(format[i]);
-		}
-		if (!format[i])
-			return (count);
-		if (format[i] == '%' && !format[i + 1])
-			return (-1);
-		for (j = 0; function[j].op != NULL; j++)
-		{
-			if (format[i + 1] == ' ')
+			for (b = 0; function[b].op != NULL; b++)
 			{
-				_putchar(format[i + 1]);
-				count++;
-				i++;
+				if (format[a + 1] == function[b].op[0])
+					{
+						call = function[b].func(ap);
+						if (call == -1)
+							return (-1);
+						counter += call;
+						break;
+					}
 			}
-			return (-1);
-			if (format[i + 1] == function[j].op[0])
+			if (function[b].op == NULL && format[a + 1] != ' ')
 			{
-				count += function[j].func(ap);
-				i += 2;
+				if (format[a + 1] != '\0')
+				{
+					_putchar(format[a]);
+					_putchar(format[a + 1]);
+					counter = counter + 2;
+				}
+				else
+					return (-1);
 			}
+			a = a + 1;
 		}
-		if (function[j].op == NULL)
+		else
 		{
-			_putchar(format[i]);
-			i++;
-			count++;
+			_putchar(format[a]);
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }
