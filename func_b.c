@@ -32,8 +32,8 @@ int func_b(va_list ap)
 		i++;
 	}
 	rev_string(ptr);
-	  for (i = 0; i < leng; i++)
-	_putchar(ptr[i]);
+	for (i = 0; i < leng; i++)
+		_putchar(ptr[i]);
 	free(ptr);
 	return (i);
 }
