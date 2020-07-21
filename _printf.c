@@ -9,18 +9,18 @@
 int _printf(const char *format, ...)
 {
 	type_t function[] = {
-		{'c', func_char},
-		{'s', func_string},
-		{'%', func_porc},
+		{"c", func_char},
+		{"s", func_string},
+		{"%", func_porc},
+		{"d", func_int},
+		{"i", func_int},
 		{NULL, NULL}
 	};
 	va_list ap;
-	int print;
-	int n;
+	int print = 0;
 
 	va_start(ap, format);
-	n = select_func(format, ap, function);
+	print = select_func(format, ap, function);
 	va_end(ap);
 	return (print);
-
 }

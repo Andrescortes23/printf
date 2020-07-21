@@ -8,7 +8,7 @@
  */
 int func_int(va_list ap)
 {
-	int resul, num, count, tem;
+	int resul, num, count = 0, tem = 0;
 
 	num = va_arg(ap, int);
 	if (num < 0)

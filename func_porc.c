@@ -4,7 +4,7 @@
  *@ap: List of arguments
  *Return: Number of characters printed
  */
-int func_porc(__attribute__((unused)) va_list ap)
+int func_porc(__attribute__((unused))va_list ap)
 {
 	_putchar('%');
 	return (1);

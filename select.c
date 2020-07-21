@@ -8,13 +8,13 @@
  */
 int select_func(const char *format, va_list ap, type_t function[])
 {
-	int i, j, count;
+	int i, j, count = 0;
 
-	if (format[i] == NULL)
+	if (format == NULL)
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		for (; format[i] != '%' && format[i]; i++)
+		for (i = 0; format[i] != '%' && format[i]; i++)
 		{
 			_putchar(format[i]), count++;
 		}
@@ -22,7 +22,7 @@ int select_func(const char *format, va_list ap, type_t function[])
 			return (count);
 		if (format[i] == '%' && !format[i + 1])
 			return (-1);
-		for (j = 0; function[j].type != NULL; j++)
+		for (j = 0; function[j].op != NULL; j++)
 		{
 			if (format[i + 1] == ' ')
 			{
@@ -31,13 +31,14 @@ int select_func(const char *format, va_list ap, type_t function[])
 				i++;
 			}
 			return (-1);
-			if (format[i + 1] == function[j].type[0])
+			if (format[i + 1] == function[j].op[0])
 			{
-				count += function[j].f(ap);
+				count += function[j].func(ap);
 				i += 2;
+				break;
 			}
 		}
-		if (function[j].type == NULL)
+		if (function[j].op == NULL)
 		{
 			_putchar(format[i]);
 			i++;
