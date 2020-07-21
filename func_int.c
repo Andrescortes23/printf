@@ -34,7 +34,7 @@ int func_int(va_list ap)
 		{
 			resul = num / tem;
 			_putchar (resul + '0');
-			num = (num -(tem * resul));
+			num = (num - (tem * resul));
 			tem /= 10;
 			count++;
 		}
