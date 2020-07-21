@@ -19,7 +19,6 @@ int func_dec(va_list ap)
 		resul *= -1;
 		_putchar('-');
 		count++;
-
 	}
 	x = resul;
 	n = resul;
@@ -38,10 +37,9 @@ int func_dec(va_list ap)
 }
 
 /**
- * func_int - print integer
- * @ap: parameters
- *
- * Return: func_int
+ *func_int - to print integer
+ *@ap: parameters
+ *Return: func_dec to parameters
  */
 int func_int(va_list ap)
 {

@@ -14,14 +14,13 @@ int func_string(va_list ap)
 	pntr = va_arg(ap, char *);
 
 	if (pntr == NULL)
+		pntr = "(null)";
+
+	index = 0;
+	while (pntr[index] != 0)
 	{
-		pntr = "(nil)";
-		for (index = 0; index < 7; index++)
-			_putchar(pntr[index]);
-		return (index);
+		_putchar(pntr[index]);
+		index++;
 	}
-	else
-		while (pntr[index] != '\0')
-			_putchar(pntr[index++]);
 	return (index);
 }
