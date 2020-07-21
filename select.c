@@ -1,10 +1,11 @@
 #include "holberton.h"
 
 /**
- * selec_check - specific char
- * @character: arguments
- *
- * Return: -1 for %, 1 for char
+ * select_func - specific char
+ * @format: _printf arguments
+ *@ap: list of arguments
+ *@function: function type struct
+ * Return: number of prints
  */
 int select_func(const char *format, va_list ap, type_t function[])
 {
