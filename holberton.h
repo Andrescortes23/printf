@@ -28,5 +28,8 @@ int select_func(const char *format, va_list ap, type_t function[]);
 int func_int(va_list ap);
 int func_dec(va_list ap);
 int (*selec_type(char op))(va_list ap);
+int func_b(va_list ap);
+int length(unsigned int n, unsigned int b);
+void rev_string(char *ptr);
 
 #endif
