@@ -6,38 +6,44 @@
  *
  * Return: number of arguments
  */
-int func_int(va_list ap)
+int func_dec(va_list ap)
 {
-	int resul, num, count = 0, tem = 0;
+	int resul, num, count;
+	unsigned int n, x;
 
-	num = va_arg(ap, int);
-	if (num < 0)
+	resul = count = 0;
+	num = 1;
+	resul = va_arg(ap, int);
+	if (resul < 0)
 	{
-		num *= -1;
+		resul = resul * -1;
 		_putchar('-');
 		count++;
 
 	}
-	else if (num == 0)
+	x = resul;
+	n = resul;
+	while (n > 9)
 	{
-		_putchar('0');
-		count++;
+		n = n / 10;
+		num = num * 10;
 	}
-	else
+	while (num >= 1)
 	{
-		while (tem < num)
-		{
-			tem *= 10;
-		}
-		tem /= 10;
-		while (tem >= 1)
-		{
-			resul = num / tem;
-			_putchar (resul + '0');
-			num = (num - (tem * resul));
-			tem /= 10;
-			count++;
-		}
+		count++;
+		_putchar(((x / num) % 10) + '0');
+		num = num / 10;
 	}
 	return (count);
+}
+
+/**
+ * func_print_int - print integer
+ * @p: parameters
+ *
+ * Return: func_int
+ */
+int func_int(va_list ap)
+{
+	return (func_int(ap));
 }
