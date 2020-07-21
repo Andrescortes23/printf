@@ -8,19 +8,37 @@
  */
 int _printf(const char *format, ...)
 {
-	type_t function[] = {
-		{"c", func_char},
-		{"s", func_string},
-		{"%", func_porc},
-		{"d", func_int},
-		{"i", func_int},
-		{NULL, NULL}
-	};
+
 	va_list ap;
-	int print = 0;
+	int i, j = 0;
 
 	va_start(ap, format);
-	print = select_func(format, ap, function);
+	if (format == NULL)
+		return (-1);
+	i = 0;
+	while (format[i] != '\0')
+	{
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (-1);
+		if (format[i] == '%' && selec_check(format[i + 1]) != 0)
+		{
+			i++;
+			if (selec_check(format[i]) == 1)
+				j += (*selec_type(format[i]))(ap);
+			else
+			{
+				_putchar(format[i]);
+				j++;
+			}
+			i++;
+		}
+		else
+		{
+			_putchar(format[i]);
+			j++;
+			i++;
+		}
+	}
 	va_end(ap);
-	return (print);
+	return (j);
 }

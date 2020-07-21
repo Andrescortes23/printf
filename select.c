@@ -1,53 +1,24 @@
 #include "holberton.h"
 
 /**
- * select_func - select different types of function
- * @format: _printf argument
- * @list: list of arguments
- * @function: function type structure
+ * selec_check - specific char
+ * @character: arguments
  *
- * Return: count
+ * Return: -1 for %, 1 for char
  */
-int select_func(const char *format, va_list ap, type_t function[])
+int selec_check(char character)
 {
-	int i, j, selec, count = 0;
+	char list[] = {'s', 'c', 'd', 'i'};
+	int i;
 
-	if (!format)
+	if (character == '%')
 		return (-1);
-	for (i = 0; format[i]; i++)
+	i = 0;
+	while (i < 4)
 	{
-		if (format[i] == '%')
-		{
-			for (j = 0; function[j].op; j++)
-			{
-				if (format[i + 1])
-				{
-					selec = function[j].func(ap);
-					if (selec == -1)
-						return (-1);
-					count += selec;
-					break;
-				}
-			}
-
-			if (format[i + 1] != ' ' && !(function[j].op))
-			{
-				if (format[i + 1])
-				{
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					count += 2;
-				}
-				else
-					return (-1);
-			}
-			i++;
-		}
-		else
-		{
-			_putchar(format[i]);
-			count++;
-		}
+		if (character == list[i])
+			return (1);
+		i++;
 	}
-	return (count);
+	return (0);
 }

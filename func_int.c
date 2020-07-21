@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * func_int - function to print numbers
+ * func_dec - function to print numbers
  * @ap: list of arguments
  *
  * Return: number of arguments
@@ -38,12 +38,12 @@ int func_dec(va_list ap)
 }
 
 /**
- * func_print_int - print integer
+ * func_int - print integer
  * @p: parameters
  *
  * Return: func_int
  */
 int func_int(va_list ap)
 {
-	return (func_int(ap));
+	return (func_dec(ap));
 }
