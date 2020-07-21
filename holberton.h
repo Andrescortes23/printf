@@ -4,10 +4,10 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <limits.h>
 
 /**
- * type - struct type_op
+ * type - struct type
  * @op: the operator
  * @func: function pointer
  *
@@ -15,16 +15,17 @@
  */
 typedef struct type
 {
-	char *op;
-	int (*func)(va_list);
+	char op;
+	int (*func)(va_list ap);
 } type_t;
+
 int _putchar(char c);
-void _puts(char *str);
 int _printf(const char *format, ...);
 int func_char(va_list ap);
-int func_porc(__attribute__((unused)) va_list ap);
 int func_string(va_list ap);
-int select_func(const char *format, va_list ap, type_t function[]);
+int selec_check(char character);
 int func_int(va_list ap);
+int func_dec(va_list ap);
+int (*selec_type(char op))(va_list ap);
 
 #endif
