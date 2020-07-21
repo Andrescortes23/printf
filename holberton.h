@@ -1,4 +1,4 @@
-#ifnder HOLBERTON
+#ifndef HOLBERTON
 #define HOLBERTON
 #include <unistd.h>
 #include <stdarg.h>
@@ -16,7 +16,7 @@
 typedef struct type_op
 {
 	char *op;
-	void (*f)();
+	int (*func)(va_list);
 }type_t;
 int _putchar(char c);
 void _puts(char *str);
@@ -27,4 +27,4 @@ int func_string(va_list ap);
 int select_func(const char *format, va_list ap, type_t function[]);
 int func_int(va_list ap);
 
-#endf
+#endif
