@@ -15,7 +15,6 @@
  */
 typedef struct type
 {
-<<<<<<< HEAD
 	char op;
 	int (*func)(va_list ap);
 } type_t;
