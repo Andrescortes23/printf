@@ -4,7 +4,7 @@
  *@ap: list of arguments
  *Return: The number of printed characters
  */
-int func_string(va_list ap);
+int func_string(va_list ap)
 {
 	int index;
 	char *pntr;

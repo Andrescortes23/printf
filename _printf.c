@@ -1,29 +1,26 @@
 #include "holberton.h"
 /**
- *type_t_func - to choose the function
- *@c: string to pass
- *Return: char to print
+ * _printf - function that produces output according to a format
+ * @format: is a character string. The format string is composed or more d
+ *
+ * Return: the number of characters printed
  */
-int (type_t_func(const char c))(va_list)
+int _printf(const char *format, ...)
 {
-	int index = 0;
-
-	type_t format[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{"d", print_integer},
-		{"i", print_integer},
-		{NULL, NULL},
+	type_t function[] = {
+		{"c", func_char},
+		{"s", func_string},
+		{"%", func_porc},
+		{"i", func_int},
+		{"d", func_int},
+		{NULL, NULL}
 	};
+	va_list ap;
+	int print = 0;
 
-	while (index < 6)
-	{
-		if (*(format[index].op) == s)
-		{
-			return (format[index].f);
-		}
-		index++;
-	}
-	return (0);
+	va_start(ap, format);
+	print = select_func(format, ap, function);
+	va_end(ap);
+	return (print);
+
 }
