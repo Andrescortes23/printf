@@ -1,47 +1,51 @@
 #include "holberton.h"
 
 /**
- * select- select different types of function
+ * select_func - select different types of function
  * @format: _printf argument
  * @list: list of arguments
  * @function: function type structure
+ *
+ * Return: count
  */
 int select_func(const char *format, va_list ap, type_t function[])
 {
-	int i, j, count = 0;
+	int i, j, selec, count = 0;
 
-	if (format == NULL)
+	if (!format)
 		return (-1);
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format[i]; i++)
 	{
-		for (i = 0; format[i] != '%' && format[i]; i++)
+		if (format[i] == '%')
 		{
-			_putchar(format[i]), count++;
-		}
-		if (!format[i])
-			return (count);
-		if (format[i] == '%' && !format[i + 1])
-			return (-1);
-		for (j = 0; function[j].op != NULL; j++)
-		{
-			if (format[i + 1] == ' ')
+			for (j = 0; function[j].op; j++)
 			{
-				_putchar(format[i + 1]);
-				count++;
-				i++;
+				if (format[i + 1])
+				{
+					selec = function[j].func(ap);
+					if (selec == -1)
+						return (-1);
+					count += selec;
+					break;
+				}
 			}
-			return (-1);
-			if (format[i + 1] == function[j].op[0])
+
+			if (format[i + 1] != ' ' && !(function[j].op))
 			{
-				count += function[j].func(ap);
-				i += 2;
-				break;
+				if (format[i + 1])
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					count += 2;
+				}
+				else
+					return (-1);
 			}
+			i++;
 		}
-		if (function[j].op == NULL)
+		else
 		{
 			_putchar(format[i]);
-			i++;
 			count++;
 		}
 	}

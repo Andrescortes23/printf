@@ -1,8 +1,10 @@
 #include "holberton.h"
+
 /**
- *func_string - print string
- *@ap: list of arguments
- *Return: The number of printed characters
+ * func_string - print string
+ * @ap: list of arguments
+ *
+ * Return: The number of printed characters
  */
 int func_string(va_list ap)
 {

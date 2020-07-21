@@ -7,9 +7,9 @@
 #include <stdlib.h>
 
 /**
- * type_op - struct type_op
+ * type - struct type_op
  * @op: the operator
- * @f: function pointer
+ * @func: function pointer
  *
  * Description: contain char pointer and function pointer
  */
