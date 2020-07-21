@@ -12,7 +12,7 @@ int func_string(va_list ap)
 	pntr = va_arg(ap, char *);
 
 	if (pntr == NULL)
-		pntr = "(nil)";
+		pntr = "(null)";
 
 	index = 0;
 	while (pntr[index] != 0)
