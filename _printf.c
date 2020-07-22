@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 		{"%", func_porc},
 		{"i", func_int},
 		{"d", func_dec},
-		{"b", func_b},
+		{"b", print_b},
 		{NULL, NULL}
 	};
 	va_list ap;

@@ -6,34 +6,27 @@
  *
  * Return: numbert
  */
-int func_b(va_list ap)
+int func_b(unsigned int num)
 {
-	unsigned int i, x, bit = 0, leng = 0;
-	char *ptr;
+	if (num < 2)
+	{
+		_putchar(num + '0');
+		return (1);
+	}
+	return (1 + func_b(num / 2) + !_putchar(num % 2 + '0'));
 
-	x = va_arg(ap, unsigned int);
-	if (x == 0)
-	{
-		_putchar('0');
-		leng = 1;
-		return (leng);
-	}
-	leng = length(x, 2);
-	if (leng == 0)
-		return (-1);
-	ptr = malloc(sizeof(char) * leng);
-	if (ptr == NULL)
-		return (-1);
-	while (x > 0)
-	{
-		bit = x % 2;
-		x /= 2;
-		ptr[i] = bit + '0';
-		i++;
-	}
-	rev_string(ptr);
-	for (i = 0; i < leng; i++)
-		_putchar(ptr[i]);
-	free(ptr);
-	return (i);
+}
+
+
+/**
+ *
+ *
+ *
+ */
+int print_b(va_list ap)
+{
+	unsigned int number;
+
+	number = va_arg(ap, unsigned int);
+	return (func_b(number));
 }
