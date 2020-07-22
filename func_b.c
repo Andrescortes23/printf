@@ -2,9 +2,9 @@
 
 /**
  * func_b - function to convert decimal to binary
- * @ap: lista type
+ * @num: lista type
  *
- * Return: numbert
+ * Return: number
  */
 int func_b(unsigned int num)
 {
@@ -19,9 +19,9 @@ int func_b(unsigned int num)
 
 
 /**
- *
- *
- *
+ *print_b - print binary
+ *@ap: list of arguments
+ *Return: number
  */
 int print_b(va_list ap)
 {
