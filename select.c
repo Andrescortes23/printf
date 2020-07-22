@@ -10,6 +10,9 @@ int select_func(const char *format, va_list ap, type_t function[])
 {
 	int a, b, call, counter = 0;
 
+	if (format == NULL)
+		return (-1);
+
 	for (a = 0; format[a] != '\0'; a++)
 	{
 		if (format[a] == '%')
