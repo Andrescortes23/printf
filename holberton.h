@@ -32,5 +32,12 @@ int func_b(unsigned int num);
 int print_b(va_list ap);
 int length(unsigned int n, unsigned int b);
 void rev_string(char *ptr);
+int func_u(va_list ap);
+int print_o(va_list ap);
+int func_o(unsigned int num);
+int func_x(unsigned int num);
+int func_X(unsigned int num);
+int print_x(va_list ap);
+int print_X(va_list ap);
 
 #endif

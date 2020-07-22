@@ -15,6 +15,10 @@ int _printf(const char *format, ...)
 		{"i", func_int},
 		{"d", func_dec},
 		{"b", print_b},
+		{"u", func_u},
+		{"o", print_o},
+		{"x", print_x},
+		{"X", print_X},
 		{NULL, NULL}
 	};
 	va_list ap;
