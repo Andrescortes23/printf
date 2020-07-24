@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 # _printf function, in the C Programming Language
 
 This project is about recreating the C library function printf.
 The function printf sends formatted output to stdout (standard output stream)
 by formatting the arguments passed in and coverting the arguments into a
 character string. This version will be used as _printf.
-||||||| merged common ancestors
-# printf
-=======
-# **Printf**
 
 This repository contain the Printf project by Cristhian Carbonell and Andrés Cortes.
 Here we make our own printf function that reproduce the printf function in standar library.
@@ -45,4 +40,5 @@ The next are the task you will find in this repository until the date.
 **3. Handle the following custom conversion specifiers:**
 
 * b: the unsigned int argument is converted to binary
->>>>>>> cd2234d7b87e72d96c897f9137e6113daa0dec4a
+
+author Cristhian-Carbonell, Andres Cortes
